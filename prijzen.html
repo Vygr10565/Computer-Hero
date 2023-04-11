@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Chero | Prijzen</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
+    <meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Timothy Jansen">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" color="#6366f1" href="assets/favicon/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="white">
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+    </script>
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+      
+    </script>
+    <!-- Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- Vendor styles-->
+    <link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Laden...</span>
+      </div>
+    </div>
+    <!-- Page wrapper-->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+      <header class="navbar navbar-expand-lg fixed-top">
+        <div class="container"><a class="navbar-brand pe-sm-3" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+              <svg version="1.1" width="35" height="32" viewBox="0 0 36 33" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"></path>
+              </svg></span>Computer Hero</a>
+          <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+            <input class="form-check-input" type="checkbox" id="theme-mode">
+            <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+            <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+          </div><a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-mail-filled fs-xl me-2 ms-n1"></i>Direct hulp</a>
+          <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+          <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Diensten</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="portfolio-list-v1.html">List View v.1</a></li>
+                      <li><a class="dropdown-item" href="portfolio-list-v2.html">List View v.2</a></li>
+                      <li><a class="dropdown-item" href="portfolio-grid-v1.html">Grid View v.1</a></li>
+                      <li><a class="dropdown-item" href="portfolio-grid-v2.html">Grid View v.2</a></li>
+                      <li><a class="dropdown-item" href="portfolio-slider.html">Slider View</a></li>
+                      <li><a class="dropdown-item" href="portfolio-single-v1.html">Single Project v.1</a></li>
+                      <li><a class="dropdown-item" href="portfolio-single-v2.html">Single Project v.2</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="blog-grid-sidebar.html">Grid View with Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-grid.html">Grid View no Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-list-sidebar.html">List View with Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-list.html">List View no Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v1.html">Single post v.1</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v2.html">Single post v.2</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v3.html">Single post v.3</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="over_mij.html">About - Agency</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="diensten.html">Services v.1</a></li>
+                  <li><a class="dropdown-item" href="contactpagina.html">Contacts v.1</a></li>
+                  <li><a class="dropdown-item" href="404.html">404 Error v.1</a></li>
+                  <li><a class="dropdown-item" href="computerhulp_aan_huis.html">Computerhulp</a></li>
+                  <li><a class="dropdown-item" href="computerhulp_aan_huis.html">Computerreparatie</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="components/typography.html">UI Kit</a></li>
+              <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">Docs</a></li>
+              <li class="nav-item"><a class="nav-link" href="pricing.html">Prijzen</a></li>
+              <li class="nav-item"><a class="nav-link" href="over_mij.html">Persoonlijk</a></li>
+            </ul>
+            <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-mail-filled fs-xl me-2 ms-n1"></i>Direct Hulp</a></div>
+          </nav>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Pricing plans-->
+      <section class="container py-5 mt-5 mb-lg-3 mb-xl-4 mb-xxl-5">
+        <!-- Page title-->
+        <div class="text-center pb-3 pt-lg-2 pt-xl-4 my-1 my-sm-3 my-lg-4">
+          <h1 class="display-2">Prijzen</h1>
+          <p class="fs-lg mb-0">Altijd de juiste prijs voor jou</p>
+        </div>
+        <!-- Plans-->
+        <div class="row row-cols-3 flex-nowrap pb-4 overflow-auto">
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3>Op afstand</h3>
+                <div class="display-2 text-primary">€8</div>
+                <div class="mb-4">Per kwartier</div>
+                <p class="mb-4 pb-4">Phasellus in hendrerit interdum lorem proin pretium dictum urna</p>
+                <button class="btn btn-primary w-100" type="button">Maak afspraak</button>
+              </div>
+            </div>
+          </div>
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card border-primary bg-primary h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3 class="text-light"><span style="background: linear-gradient(90.72deg, #f8cd82 3.49%, #f65b74 50.67%, #0df7db 100.79%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Persoonlijk</span></h3>
+                <div class="display-2 text-light">€12</div>
+                <div class="text-light opacity-70 mb-4">Per kwartier</div>
+                <p class="text-light opacity-70 mb-4 pb-4">Morbi et massa fames ac scelerisque sit commodo dignissim aucibus</p>
+                <button class="btn btn-light w-100" type="button">Meer info</button>
+              </div>
+            </div>
+          </div>
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3>Prijs op afspraak</h3>
+                <div class="display-2 text-primary">Vast</div>
+                <div class="mb-4">Per afspraak</div>
+                <p class="mb-4 pb-4">Bij grotere projecten is het handiger om een vaste prijs af te spreken.</p>
+                <button class="btn btn-primary w-100" type="button">Maak afspraak</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Comparison table-->
+        <div class="text-center pt-md-1 pt-lg-2">
+          <button class="btn btn-more btn-link fs-4" type="button" data-show-label="Vergelijk prijzen" data-hide-label="Vergelijk prijzen" data-bs-toggle="collapse" data-bs-target="#comparePlans"></button>
+        </div>
+        <div class="collapse" id="comparePlans">
+          <div class="table-responsive pt-sm-2 pt-lg-3">
+            <table class="table text-center text-nowrap">
+              <thead>
+                <tr>
+                  <th class="border-0 py-3">&nbsp;</th>
+                  <th class="border-0 py-3"><span class="h5 mb-0">Op afstand</span></th>
+                  <th class="border-0 py-3"><span class="h5 mb-0">Persoonlijk</span></th>
+                  <th class="border-0 py-3"><span class="h5 mb-0">Aan huis</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="text-body fw-medium">Billed monthly</span></th>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">$18</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">$72</span></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><span class="text-dark">$36</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Members<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 py-3"><span class="text-dark">Just you</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">Unlimited</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">3 members</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Guest access<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">Just you</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">Unlimited</span></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><span class="text-dark">3 members</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">File uploads<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 py-3"><span class="text-dark">2 GB</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">30 GB</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">10 GB</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start pt-4 pb-3 ps-4">
+                    <div class="h5 pt-1 mb-0">Collaboration</div>
+                  </th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="text-body fw-medium">Real-time collaboration</span></th>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Link sharing<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Collaborative workspace<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Filter views<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 py-3"><span class="text-dark">3</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">Unlimited</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">12</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Teams<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start pt-4 pb-3 ps-4">
+                    <div class="h5 pt-3 mb-0">Features</div>
+                  </th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="text-body fw-medium">Web, desktop, &amp; mobile apps</span></th>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Reminders<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="text-body fw-medium">Priorities</span></th>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Comments<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="text-body fw-medium">Integrations</span></th>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">5</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">Unlimited</span></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><span class="text-dark">15</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start pt-4 pb-3 ps-4">
+                    <div class="h5 pt-3 mb-0">Admin &amp; security</div>
+                  </th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                  <th class="border-0 py-3">&nbsp;</th>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Admin &amp; member roles<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="text-body fw-medium">Team billing</span></th>
+                  <td class="border-0 py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                  <td class="border-0 py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Priority support<i class="ai-circle-info fs-lg ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" data-bs-html="true" data-bs-content="Feature description text"></i></span></th>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                  <td class="border-0 bg-secondary py-3"><i class="ai-check fs-xl text-success"></i></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><i class="ai-cross fs-xl text-danger"></i></td>
+                </tr>
+                <tr>
+                  <td class="border-0 pt-4">&nbsp;</td>
+                  <td class="border-0 pt-4">
+                    <button class="btn btn-outline-primary mt-3" type="button">Get started $18</button>
+                  </td>
+                  <td class="border-0 pt-4">
+                    <button class="btn btn-outline-primary mt-3" type="button">Get started $72</button>
+                  </td>
+                  <td class="border-0 pt-4">
+                    <button class="btn btn-outline-primary mt-3" type="button">Get started $36</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials (tabs)-->
+      <section class="container mt-n3 mt-sm-0 py-md-3 py-lg-4">
+        <h2 class="text-center pb-3 mb-lg-4">Wat klanten zeggen over Chero</h2>
+        <script defer async src='https://cdn.trustindex.io/loader.js?3390bb9102cc444bbc669972809'></script>
+      </section>
+      <!-- Tools-->
+      <section class="container overflow-hidden py-5 mt-2 mt-sm-3 my-2 my-lg-4 my-xl-5">
+        <div class="row align-items-center pb-1 pb-sm-3 pb-md-4">
+          <div class="col-md-5 text-center text-md-start pe-md-5 pe-lg-0 pe-xxl-4 ps-xl-5 mb-5 mb-md-0">
+            <h2 class="h1 pb-3 pb-xl-2 mb-lg-4 mb-xl-5">Ervaring met alle apparaten</h2><a class="btn btn-primary" href="#">See all integrations</a>
+          </div>
+          <div class="col-md-7 col-lg-6 offset-lg-1">
+            <div class="position-relative mx-auto" style="max-width: 510px;"><img class="d-block d-dark-mode-none" src="assets/img/landing/saas-2/tools/circle-gray-1.png" style="animation: rotate-cw 100s linear infinite;" alt="Circle"><img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/tools/circle-light-1.png" style="animation: rotate-cw 100s linear infinite;" alt="Circle"><img class="d-block d-dark-mode-none position-absolute top-0 start-0" src="assets/img/landing/saas-2/tools/circle-gray-2.png" style="animation: rotate-ccw 50s linear infinite;" alt="Circle"><img class="d-none d-dark-mode-block position-absolute top-0 start-0" src="assets/img/landing/saas-2/tools/circle-light-2.png" style="animation: rotate-ccw 50s linear infinite;" alt="Circle"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-1.png" data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="1200" alt="Icon"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-2.png" data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="450" alt="Icon"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-3.png" data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="600" alt="Icon"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-4.png" data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="750" alt="Icon"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-5.png" data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="900" alt="Icon"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-6.png" data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="1050" alt="Icon"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-7.png" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250" alt="Icon"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-8.png" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250" data-aos-delay="150" alt="Icon"><img class="position-absolute top-0 start-0 zindex-2" src="assets/img/landing/saas-2/tools/icon-9.png" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250" data-aos-delay="300" alt="Icon"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Tools-->
+      <section class="container">
+        <div class="bg-faded-primary rounded-5 py-5 px-4 p-sm-5">
+          <div class="d-lg-flex align-items-center g-0 py-2 py-sm-3 py-md-4 p-xl-5">
+            <div class="order-lg-2 text-center text-lg-start ps-lg-5 mx-auto me-lg-0">
+              <h2 class="h1 mb-4"><span><span style="background: linear-gradient(90.72deg, #94c779 3.49%, #acbff1 50.67%, #efa7ec 100.79%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Persoonlijk abonnement</span> <br class='d-none d-lg-inline'> €4,99 per maand</h2>
+              <h5 class="pb-3 mb-3 mb-lg-4">Behoefte aan vaker hulp en korting bij elke afspraak?</h5>
+                <p class="pb-3 mb-3 mb-lg-4">Je hebt vaker hulp nodig en zoekt naar een voordelige oplossing. Kijk niet verder en neem het persoonlijke abonnement bij mijmijmijmijmijmijmijmijmijmijmijmijmijmijmij.</p>
+                <ul>
+                  <li>10% korting op totale kosten</li>
+                  <li>Geen voorrijkosten</li>
+                  <li>Anti-virus pakket voor drie apparaten twv. 79,00.- van Kaspersky</li>
+                  <li>Mijn <span style="background: linear-gradient(90.72deg, #94c779 3.49%, #acbff1 50.67%, #efa7ec 100.79%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">persoonlijk</span> nummer, zodat jij zo snel mogelijk geholpen bent. </li>
+                </ul>
+                <br>
+                <a class="btn btn-primary d-none d-lg-inline-flex" href="/over_mij.html"><i class="ai-shopping-bag fs-xl me-2 ms-n1"></i>Meer info</a>
+            </div>
+            <div class="order-lg-1 w-100 mx-auto mx-lg-0" style="max-width: 558px;">
+              <div class="row row-cols-1 g-2 g-sm-2 g-lg-2 g-xl-2">
+                <!-- Rounded image -->
+                <img src="assets/img/portfolio/list/DSC00818.jpg" class="rounded-5" alt="Foto Tim Voorpagina">
+              </div>
+              <div class="d-lg-none text-center pt-4 mt-2 mt-md-3" data-aos="zoom-in" data-aos-easing="ease-out-back" data-aos-delay="900"><a class="btn btn-primary" href="#">Over mij</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ (Accordion)-->
+      <section class="bg-secondary py-5">
+        <div class="container py-lg-3 py-xl-5">
+          <div class="row pt-1 pb-2 py-sm-4">
+            <div class="col-md-4 text-center text-md-start">
+              <h2 class="h1">Any questions? Check out the FAQ</h2>
+              <p class="pb-3 pb-sm-4">Et felis vitae ac venenatis lacus cras etiam risus scelerisque auctor adipiscing in a porta</p>
+              <div class="d-none d-md-flex justify-content-center">
+                <svg class="text-warning ms-n4" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="col-md-8 col-lg-7 offset-lg-1">
+              <div class="accordion" id="faq">
+                <div class="accordion-item bg-light">
+                  <h3 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#questionOne" aria-expanded="true" aria-controls="questionOne">Is there a free trial?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse show" id="questionOne" aria-labelledby="headingOne" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">Adipiscing sagittis neque egestas id platea accumsan. Morbi inpa platea urna curabitur habitant pulvinar lacinia neque. Netus gravida amet, aliquam quam turpis aliquet cras. Find aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu nulla pariatur. Sit amet, adipiscing elit.</div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-light">
+                  <h3 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#questionTwo" aria-expanded="false" aria-controls="questionTwo">How do refunds work?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="questionTwo" aria-labelledby="headingTwo" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">Quisque rutrum sit amet magna sit amet tristique. Vivamus rhoncus ac purus vitae convallis. Aliquam erat volutpat. Proin egestas, mauris ut semper semper, ipsum felis mattis ligula, et porttitor ante arcu nec ante. Aliquam congue est eu turpis sollicitudin, et ullamcorper tortor aliquam.</div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-light">
+                  <h3 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#questionThree" aria-expanded="false" aria-controls="questionThree">Do you offer student discounts?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="questionThree" aria-labelledby="headingThree" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">Proin ac quam eget velit luctus tincidunt vel in nunc. Maecenas cursus erat lacus, id interdum elit accumsan in. Mauris placerat dapibus sem, condimentum interdum nulla varius ac. Mauris quam mauris, rhoncus et tortor vel, tempus dignissim libero. Curabitur sed odio in odio elementum cursus.</div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-light">
+                  <h3 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#questionFour" aria-expanded="false" aria-controls="questionFour">What happens if I run out of credit?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="questionFour" aria-labelledby="headingFour" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac pretium dui. Aliquam rutrum justo lorem, in efficitur odio efficitur vel. Integer mattis, neque malesuada sagittis porttitor, enim tortor ullamcorper diam, id eleifend sem mauris at turpis. Curabitur sed nisi nec ligula dictum.</div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-light">
+                  <h3 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#questionFive" aria-expanded="false" aria-controls="questionFive">Do you have monthly and yearly billing options?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="questionFive" aria-labelledby="headingFive" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">Vestibulum faucibus lectus eget augue pharetra, quis semper lectus gravida. Vestibulum pretium in elit sed iaculis. Curabitur elementum turpis at ipsum molestie, id maximus odio tincidunt. Praesent id lacinia orci. Phasellus at varius arcu. Ut nec lobortis velit.</div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-light">
+                  <h3 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#questionSix" aria-expanded="false" aria-controls="questionSix">What happens when I change plans?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="questionSix" aria-labelledby="headingSix" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">Nunc non placerat mi, sit amet hendrerit lacus. Quisque cursus lorem vitae placerat ultrices. Morbi ut orci sit amet quam vulputate lobortis. Donec vulputate mi nec nisi tincidunt commodo. Nullam efficitur tincidunt tellus accumsan pellentesque. Suspendisse elementum blandit orci.</div>
+                  </div>
+                </div>
+                <div class="accordion-item bg-light">
+                  <h3 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#questionSeven" aria-expanded="false" aria-controls="questionSeven">How do I cancel my paid plan?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="questionSeven" aria-labelledby="headingSeven" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm">Morbi a consequat diam. Fusce sit amet faucibus erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque id est dictum, suscipit neque id, ornare nibh. Cras lacinia, est non ultrices porttitor, arcu orci rhoncus leo, egestas condimentum lorem.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Pagination (bullets)-->
+<div style="height: 400px;"></div>
+</section>
+    <!-- Contact form-->
+    <section class="container dark-mode" style="margin-top: -380px;">
+      <div class="card border-0 bg-primary position-relative py-lg-4 py-xl-5">
+        <!-- Decorative shapes-->
+        <svg class="position-absolute end-0 mt-n2" width="242" height="331" viewBox="0 0 242 331" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M172.014 250.127C137.236 227.74 112.349 192.144 144.586 153.591C157.686 137.932 176.759 127.973 196.524 122.046C234.647 110.639 277.027 113.361 313.349 129.576C338.19 140.666 361.129 159.183 369.934 184.502C383.476 223.496 359.75 260.161 321.569 273.118C288.832 284.223 247.685 279.513 214.885 269.837C201.003 265.743 185.745 258.966 172.014 250.127Z" fill="#121519" fill-opacity=".07"></path>
+          <path d="M20.3265 69.264C19.7064 43.0736 29.8071 17.1878 62.3851 19.8622C75.6229 20.9505 87.9525 27.2066 98.3563 35.3132C118.426 50.9253 132.424 73.896 136.952 98.6413C140.044 115.562 138.424 134.218 127.978 148C111.901 169.236 83.4531 170.283 62.5246 155.209C44.5807 142.281 32.0983 119.217 25.3391 98.6799C22.4836 89.9885 20.5616 79.6021 20.3265 69.264Z" fill="#121519" fill-opacity=".07"></path>
+        </svg>
+        <svg class="position-absolute start-0 bottom-0 ms-3" width="169" height="217" viewBox="0 0 169 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M34.2574 90.0177C29.666 97.6253 26.6254 106.591 24.9502 114.96C19.9522 140.043 26.4112 168.792 49.6162 181.885C66.0705 191.17 91.0017 189.904 108.062 183.692C125.725 177.266 135.045 168.04 142.29 150.389C151.409 128.174 150.912 99.6904 125.93 91.6429C115.423 88.254 104.723 86.5065 94.2249 82.5889C84.6622 79.0248 74.8545 72.1766 64.4411 71.6149C50.8011 70.8777 40.9122 79.0146 34.2574 90.0177Z" fill="#121519" fill-opacity="0.07"></path>
+          <path d="M147.005 75.6331C152.135 70.7783 156.106 64.2374 159.153 57.9073C166.014 43.6372 174.127 22.1368 160.207 9.68505C152.924 3.17188 139.243 3.86644 130.324 5.29774C118.428 7.20428 107.295 8.85077 96.5031 14.783C85.8056 20.6599 79.0155 33.6997 77.0014 45.6686C75.4978 54.5776 79.63 63.6672 84.7391 70.7453C91.8208 80.5571 103.503 84.2003 114.817 84.3975C121.101 84.5081 127.716 84.0527 133.89 82.8121C138.932 81.7962 143.273 79.1597 147.005 75.6331Z" fill="#121519" fill-opacity="0.07"></path>
+        </svg>
+        <div class="card-body position-relative zindex-2 py-5">
+          <form action="https://formspree.io/f/moqbbbdw"
+          method="post" class="mx-auto" style="max-width: 800px;" id="fs-frm" name="Contactformulier" accept-charset="utf-8 data-np-autofill-type="identity" data-np-checked="1" data-np-watching="1"">
+          <fieldset id="fs-frm-inputs">
+            <h2 class="h1 card-title text-center pb-4">Kom vandaag nog in contact met jouw persoonlijke computerheld!</h2>
+            <div class="row g-4">
+              <div class="col-sm-6">
+                <label class="form-label fs-base" for="full-name">Naam</label>
+                <input class="form-control form-control-lg" type="text" placeholder="Naam" required="" id="full-name" data-np-autofill-type="name_full" data-np-uid="1f5eb57e-c650-4d87-a9f8-4c64236a748b" autocomplete="off" data-np-checked="1">
+              </div>
+              <!--
+              <div class="col-sm-6">
+                <label class="form-label fs-base" for="company">Bedrijf</label>
+                <input class="form-control form-control-lg" type="text" placeholder="Bedrijfsnaam" id="company">
+              </div>
+              -->
+              <div class="col-sm-6">
+                <label class="form-label fs-base" for="mail">Email</label>
+                <input class="form-control form-control-lg" name="_replyto" type="email" placeholder="Email adres" required="" id="mail" ata-np-autofill-type="identity_email" data-np-uid="082357f8-641c-4488-b2c5-e94907dc944a" autocomplete="off" data-np-checked="1">
+              </div>
+              <!--
+              <div class="col-sm-6">
+                <label class="form-label fs-base" for="phone">Telefoon</label>
+                <input class="form-control form-control-lg" type="phone number" placeholder="Telefoonnummer" id="phone">
+              </div>
+              -->
+              <div class="col-sm-12">
+                <label class="form-label fs-base" for="msg">Hoe kan ik je helpen?</label>
+                <textarea class="form-control form-control-lg" name="bericht" type="text" rows="6" placeholder="Bericht..." required="" id="message"></textarea>
+                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission" data-np-invisible="1" data-np-checked="1">
+              </div>
+              <div class="col-sm-12 text-center pt-4">
+                <button class="btn btn-lg btn-light" type="submit">Verzend bericht</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>    <!-- Footer-->
+    <footer class="footer py-5">
+      <div class="container pt-md-2 pt-lg-3 pt-xl-3">
+        <div class="row pb-5 pt-sm-2 mb-lg-2">
+          <div class="col-md-12 col-lg-3 pb-2 pb-lg-0 mb-4 mb-lg-0"><a class="navbar-brand py-0 mb-3 mb-lg-4" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+                <svg version="1.1
+                " width="35" height="32" viewBox="0 0 36 33" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"></path>
+                </svg></span><span class="text-nav">Computer Hero</span></a>
+            <p class="fs-sm pb-2 pb-lg-3 mb-3">Bij Computer Hero ben je op de juiste plek voor al jouw ICT-hulp.</p>
+            <div class="d-flex"><a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-3" href="#"><i class="ai-facebook"></i></a><a class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle me-3" href="#"><i class="ai-instagram"></i></a><a class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle me-3" href="#"><i class="ai-linkedin"></i></a><a class="btn btn-icon btn-sm btn-secondary btn-whatsapp rounded-circle" href="#"><i class="ai-whatsapp"></i></a></div>
+          </div>
+          <div class="col-sm-3 col-lg-2 offset-xl-1 mb-4 mb-sm-0">
+            <ul class="nav flex-column">
+              <li><h4>Servicegebieden<h4></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Amersfoort.html">Computerhulp Amersfoort</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Bilthoven.html">Computerhulp Bilthoven</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Hilversum.html">Computerhulp Hilversum</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Maarssen.html">Computerhulp Maarssen</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Nieuwegein.html">Computerhulp Nieuwegein</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Soest.html">Computerhulp Soest</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Utrecht.html">Computerhulp Utrecht</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Vianen.html">Computerhulp Vianen</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_Zeist.html">Computerhulp Zeist</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3 col-lg-2 offset-xl-1 mb-4 mb-sm-0">
+            <ul class="nav flex-column">
+              <li><h4>Computerhulp<h4></li>
+              <li><a class="nav-link py-1 px-0" href="/computer_helpdesk.html">Computer helpdesk</a></li>
+              <li><a class="nav-link py-1 px-0" href="/computer_ondersteuning.html">Computer ondersteuning</a></li>
+              <li><a class="nav-link py-1 px-0" href="/computer_hulp_voor_ouderen.html">Computer hulp voor ouderen</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Computerhulp_student.html">Computerhulp student</a></li>
+              <li><a class="nav-link py-1 px-0" href="/computerhulp_aan_huis.html">Computerhulp aan huis</a></li>
+              <li><a class="nav-link py-1 px-0" href="/wifi_problemen.html">Wifi problemen</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Internet_problemen.html">Internet probleem</a></li>
+              <li><a class="nav-link py-1 px-0" href="/Hulp_bij_computerproblemen.html">Hulp bij computerproblemen</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3 col-lg-2 offset-xl-1 mb-4 mb-sm-0">
+            <ul class="nav flex-column">
+              <li><h4>Contact<h4></li>
+              <li><a class="nav-link py-1 px-0" href="mailto:timothy.chero@gmail.com">timothy.chero@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="fs-sm mb-0"><span class="opacity-70">&copy;Chero 2020-2023</p>
+      </div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/aos/dist/aos.js"></script>
+    <!-- Main theme script-->
+    <script src="assets/js/theme.min.js"></script>
+    <!-- WhatsApp -->
+    <script>(function (w,d,s,o,f,js,fjs) {w['JS-Widget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);}(window, document, 'script', 'mw', 'https://app.wappy.chat/js/whatsapp.js?v='+ +new Date()));mw('init');mw('whatsapp', {hash: 'e71424b212879d5e3d71feab6c909887', placeholderText: 'Typ een bericht'});</script>
+  </body>
+</html>

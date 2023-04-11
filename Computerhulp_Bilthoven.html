@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Chero | Computerhulp Bilthoven</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
+    <meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Timothy Jansen">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" color="#6366f1" href="assets/favicon/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="white">
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+      
+      
+    </script>
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+      
+    </script>
+    <!-- Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- Vendor styles-->
+    <link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Laden...</span>
+      </div>
+    </div>
+    <!-- Page wrapper-->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+      <header class="navbar navbar-expand-lg fixed-top">
+        <div class="container"><a class="navbar-brand pe-sm-3" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+              <svg version="1.1" width="35" height="32" viewBox="0 0 36 33" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"></path>
+              </svg></span>Computer Hero</a>
+          <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+            <input class="form-check-input" type="checkbox" id="theme-mode">
+            <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+            <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+          </div><a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="/contactpagina.html" target="_blank" rel="noopener"><i class="ai-mail-filled fs-xl me-2 ms-n1"></i>Direct hulp</a>
+          <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+          <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/diensten.html" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Diensten</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="portfolio-list-v1.html">List View v.1</a></li>
+                      <li><a class="dropdown-item" href="portfolio-list-v2.html">List View v.2</a></li>
+                      <li><a class="dropdown-item" href="portfolio-slider.html">Slider View</a></li>
+                      <li><a class="dropdown-item" href="portfolio-single-v1.html">Single Project v.1</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="blog-list.html">List View no Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v1.html">Single post v.1</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v2.html">Single post v.2</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v3.html">Single post v.3</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Guide</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="components/typography.html">UI Kit</a></li>
+                      <li><a class="dropdown-item" href="docs/getting-started.html">Docs</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="computerhulp_aan_huis.html">Computerhulp</a></li>
+              <li class="nav-item"><a class="nav-link" href="pricing.html">Prijzen</a></li>
+              <li class="nav-item"><a class="nav-link" href="over_mij.html">Persoonlijk</a></li>
+              <li class="nav-item"><a class="nav-link" href="contactpagina.html">Contact</></li>
+            </ul>
+            <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="\contactpagina.html" target="_blank" rel="noopener"><i class="ai-mail-filled fs-xl me-2 ms-n1"></i>Direct Hulp</a></div>
+          </nav>
+        </div>
+      </header>
+       <!-- Page content-->
+      <!-- Hero-->
+      <section class="bg-dark position-relative py-5">
+        <div class="d-none d-dark-mode-block position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255,255,255, .02);"></div>
+        <div class="container dark-mode position-relative zindex-2 py-5 mb-4 mb-sm-5">
+          <div class="row pb-5 mb-2 mb-sm-0 mb-lg-3">
+            <div class="col-lg-10 col-xl-9">
+              <!-- Breadcrumb-->
+              <nav aria-label="breadcrumb">
+                <ol class="pt-lg-3 pb-lg-4 pb-2 breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Thuis</a></li>
+                  <li class="breadcrumb-item"><a href="index.html">Servicegebieden</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Computerhulp Bilthoven</li>
+                </ol>
+              </nav>
+              <h1 class="display-2 pb-2 pb-sm-3"><span style="background: linear-gradient(90.72deg, #cbfdb1 3.49%, #acbff1 50.67%, #efa7ec 100.79%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Bilthoven </span>Computerhulp</h1>
+              <ul class="list-unstyled d-flex flex-wrap mb-0">
+                <li class="d-flex py-1 me-4"><i class="ai-check-alt text-primary lead me-2"></i>Een vast gezicht</li>
+                <li class="d-flex py-1 me-4"><i class="ai-check-alt text-primary lead me-2"></i>Zo snel mogelijk</li>
+                <li class="d-flex py-1"><i class="ai-check-alt text-primary lead me-2"></i>De beste hulp</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About-->
+      <section class="container position-relative zindex-3" style="margin-top: -135px;">
+        <div class="rounded-5 overflow-hidden"> 
+          <div class="jarallax ratio ratio-16x9" data-jarallax data-speed="0.6">
+            <div class="jarallax-img" style="background-image: url(assets/img/about/agency/koppelpoort-6167013_1920.jpg);"></div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-n2 mt-sm-0 mt-md-2 mt-lg-4 mt-xl-5">
+          <div class="col-md-6 col-lg-5">
+            <div class="fs-sm text-uppercase mb-3">Wie ben ik?</div>
+            <h2 class="display-6">Je nieuwe computerheld staat voor je klaar, maar noem me maar gewoon Tim.</h2>
+          </div>
+          <div class="col-md-6 col-xl-5 offset-lg-1 offset-xl-2 pt-1 pt-sm-2 pt-md-5">
+            <p class="fs-xl"> Ik ga jou helpen met al je problemen op het gebied van computers. Inmiddels heb ik ruim vijf jaar ervaring met computers. Ik werkte daarvoor bij StudentAanHuis. Alleen jij wil iemand die je kan vertrouwen en een vast gezicht. Vandaar startte ik Computer Hero.</p>
+            <p class="fs-xl">Ik vind het super leuk om mensen te helpen en met computers te werken, komt dat even goed uit. Mocht er wat mis gaan met je computer, dan bel jij mij op en lossen we het op.</p>
+            <div class="text-center col-md-1 col-xl-8 offset-lg-1 offset-xl-2 pt-1 pt-sm-2 pt-md-5">
+              <a class="btn btn-primary" href="/contactpagina.html"><i class="ai-mail-filled fs-xl me-2 ms-n1"></i>Direct Hulp</a></button>
+            </div>
+        </div>
+      </section>
+      <!-- How it works (Steps)-->
+      <section class="overflow-hidden py-5 my-md-2 my-xl-4 my-xxl-5">
+        <div class="container py-2 py-sm-4 py-lg-5">
+          <h2 class="h1 text-center pb-3 mb-3 mb-lg-4 mt-xxl-2">Hoe pakken we dat aan?</h2>
+          <!-- Step-->
+          <div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+            <div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-left" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md"><img class="d-dark-mode-none" src="assets/img/landing/saas-2/steps/01-light.png" width="525" alt="Image"><img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/01-dark.png" width="525" alt="Image"></div>
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-aos="fade-right" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+              <div class="pe-md-4 pe-lg-0"><span class="badge fs-sm bg-faded-primary text-primary mb-3 mb-lg-4">Stap 01</span>
+                <h3 class="h2 mb-3 mb-lg-4">Neem contact op</h3>
+                <p class="pb-1 pb-lg-0 mb-4 mb-lg-5">Handig is om een lijst te maken voor jezelf en voor mij. Hierop zet je waar je tegenaan loopt. Je krijgt een melding op je computer of je wilt graag een backup maken van je telefoon. Schrijf alles op. Als ik van te voren weet, waar je hulp bij nodig hebt kan ik vanuit huis een perfecte oplossing alvast klaarzetten.
+                </p><a class="btn btn-outline-primary rounded-pill" href="/contactpagina.html"><i class="ai-mail-filled fs-xl me-2 ms-n1"></i>Direct hulp</a>
+              </div>
+            </div>
+          </div>
+          <!-- Arrow-->
+          <div class="d-none d-lg-flex justify-content-center" data-aos="fade-in" data-aos-duration="500" data-aos-offset="250">
+            <svg class="d-block text-primary" width="339" height="365" viewBox="0 0 339 365" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: -150px; margin-top: -140px; margin-bottom: -108px;">
+              <path d="M324 291.371C120.111 291.37 240.756 58.7225 1.00032 73.2606" stroke="url(#arrow1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+              <path d="M337.375 290.62C338.074 290.998 338.074 292.001 337.375 292.379L328.476 297.196C327.81 297.557 327 297.074 327 296.317L327 286.683C327 285.925 327.81 285.443 328.476 285.803L337.375 290.62Z" fill="currentColor"></path>
+              <defs>
+                <linearGradient id="arrow1" x1="324" y1="291.5" x2="-2.99974" y2="72.4997" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="currentColor"></stop>
+                  <stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <!-- Step-->
+          <div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+            <div class="col-md-6 col-xl-5 offset-xl-1 pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md"><img class="d-dark-mode-none" src="assets/img/landing/saas-2/steps/02-light.png" width="473" alt="Image"><img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/02-dark.png" width="473" alt="Image"></div>
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1" data-aos="fade-left" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+              <div class="ps-md-4 ps-lg-0"><span class="badge fs-sm bg-faded-primary text-primary mb-3 mb-lg-4">Stap 02</span>
+                <h3 class="h2 mb-3 mb-lg-4">Stappenplan</h3>
+                <ul class="list-unstyled mb-0">
+                  <li class="d-flex pt-1 mt-2"><i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>Jij neemt contact op via de mail, app of telefoon.</li>
+                  <li class="d-flex pt-1 mt-2"><i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>Samen kijken we hoe ik jou kan helpen.</li>
+                  <li class="d-flex pt-1 mt-2"><i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>Ik kom langs</li>
+                  <li class="d-flex pt-1 mt-2"><i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>Ik los jouw probleem op. (Maak een notitielijstje zodat we niks vergeten.)</li>
+                  <li class="d-flex pt-1 mt-2"><i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>Je mag alles vragen en ik leg alles uit. Wel zo fijn.</li>
+                  <li class="d-flex pt-1 mt-2"><i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>Alles opgelost? Dan ronden we af.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Arrow-->
+          <div class="d-none d-lg-flex justify-content-center" data-aos="fade-in" data-aos-duration="500" data-aos-offset="250">
+            <svg class="d-block text-primary" width="263" height="275" viewBox="0 0 263 275" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -60px; margin-left: -120px; margin-bottom: -80px;">
+              <path d="M8.13678 249.647C7.47108 250.081 6.59001 249.602 6.59106 248.808L6.60444 238.689C6.60544 237.931 7.4158 237.45 8.08162 237.811L16.5478 242.408C17.2136 242.77 17.2512 243.712 16.6163 244.125L8.13678 249.647Z" fill="currentColor"></path>
+              <path d="M261.961 37.8891C216.908 65.6243 128.226 135.486 133.916 193.05C141.029 265.005 265.134 173.468 173.666 148.634C89.2542 125.715 30.9125 210.547 13.9796 236.702" stroke="url(#arrow2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+              <defs>
+                <linearGradient id="arrow2" x1="13.9797" y1="234.5" x2="276.704" y2="60.1939" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="currentColor"></stop>
+                  <stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <!-- Step-->
+          <div class="row align-items-center position-relative">
+            <div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 d-md-flex justify-content-end pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-left" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md"><img class="d-dark-mode-none" src="assets/img/landing/saas-2/steps/03-light.png" width="473" alt="Image"><img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/03-dark.png" width="473" alt="Image"></div>
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-aos="fade-right" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+              <div class="pe-md-4 pe-lg-0"><span class="badge fs-sm bg-faded-primary text-primary mb-3 mb-lg-4">Stap 03</span>
+                <h3 class="h2 mb-3 mb-lg-4">Alles opgelost en tevreden?</h3>
+                <p class="pb-1 pb-lg-0 mb-4 mb-lg-5">Dan ronden we af. Je veilig en vertrouwd betalen met iDeal of met de pin.</p><a class="btn btn-outline-primary rounded-pill" href="/contactpagina.html"><i class="ai-mail-filled fs-xl me-2 ms-n1"></i>Direct hulp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>    
+      <!-- Over mij-->
+      <section class="container">
+        <div class="bg-faded-primary rounded-5 py-5 px-4 p-sm-5">
+          <div class="d-lg-flex align-items-center g-0 py-2 py-sm-3 py-md-4 p-xl-5">
+            <div class="order-lg-2 text-center text-lg-start ps-lg-5 mx-auto me-lg-0">
+              <h2 class="h1 mb-4"><span><span style="background: linear-gradient(90.72deg, #94c779 3.49%, #acbff1 50.67%, #efa7ec 100.79%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Persoonlijke </span> <br class='d-none d-lg-inline'>computerheld</h2>
+              <h5 class="pb-3 mb-3 mb-lg-4">Het is toch prettig als iemand op de hoogte is van je voorgeschiedenis, weet wat je apparaten nodig hebben en wat jij fijn vindt?</h5>
+                <p class="pb-3 mb-3 mb-lg-4">Mijn naam is Timothy en ik ben jouw computerheld. Al vanaf (heel) jongs af aan zit ik gefascineerd achter alles wat een scherm heeft, of het nu computers of smartphones zijn. Ik heb jarenlang bij de grote computerhulp bedrijven gewerkt, en merkte dat zowel de klanten als ik behoefte hebben aan het opbouwen van een relatie, een vertrouwensband. Daarom heb ik Chero opgericht.
+                <br>
+                <br>Bij Chero zit je goed voor een snelle oplossing en de service van een vertrouwd gezicht.</p><a class="btn btn-primary d-none d-lg-inline-flex" href="/over_mij.html"><i class="ai-user fs-xl me-2 ms-n1"></i>Over mij</a>
+            </div>
+            <div class="order-lg-1 w-100 mx-auto mx-lg-0" style="max-width: 558px;">
+              <div class="row row-cols-1 g-2 g-sm-2 g-lg-2 g-xl-2">
+                <!-- Rounded image -->
+                <img src="assets/img/portfolio/list/DSC00818.jpg" class="rounded-5" alt="Foto Tim Voorpagina">
+              </div>
+              <div class="d-lg-none text-center pt-4 mt-2 mt-md-3" data-aos="zoom-in" data-aos-easing="ease-out-back" data-aos-delay="900"><a class="btn btn-primary" href="#">Over mij</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container mt-auto mt-sm-3 py-md-3 py-lg-6">
+       <!-- <h2 class="text-center pb-3 mb-lg-4">Wat klanten zeggen over Chero</h2>-->
+       <script defer async src='https://cdn.trustindex.io/loader.js?c57c1d71027f476f2c961e6775b'></script>
+      </section>
+    </section>
+  <section>
+  <!-- Pagination (bullets)-->
+<div style="height: 400px;"></div>
+</section>
+  <!-- Contact form-->
+  <section class="container dark-mode" style="margin-top: -380px;">
+    <div class="card border-0 bg-primary position-relative py-lg-4 py-xl-5">
+      <!-- Decorative shapes-->
+      <svg class="position-absolute end-0 mt-n2" width="242" height="331" viewBox="0 0 242 331" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M172.014 250.127C137.236 227.74 112.349 192.144 144.586 153.591C157.686 137.932 176.759 127.973 196.524 122.046C234.647 110.639 277.027 113.361 313.349 129.576C338.19 140.666 361.129 159.183 369.934 184.502C383.476 223.496 359.75 260.161 321.569 273.118C288.832 284.223 247.685 279.513 214.885 269.837C201.003 265.743 185.745 258.966 172.014 250.127Z" fill="#121519" fill-opacity=".07"></path>
+        <path d="M20.3265 69.264C19.7064 43.0736 29.8071 17.1878 62.3851 19.8622C75.6229 20.9505 87.9525 27.2066 98.3563 35.3132C118.426 50.9253 132.424 73.896 136.952 98.6413C140.044 115.562 138.424 134.218 127.978 148C111.901 169.236 83.4531 170.283 62.5246 155.209C44.5807 142.281 32.0983 119.217 25.3391 98.6799C22.4836 89.9885 20.5616 79.6021 20.3265 69.264Z" fill="#121519" fill-opacity=".07"></path>
+      </svg>
+      <svg class="position-absolute start-0 bottom-0 ms-3" width="169" height="217" viewBox="0 0 169 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M34.2574 90.0177C29.666 97.6253 26.6254 106.591 24.9502 114.96C19.9522 140.043 26.4112 168.792 49.6162 181.885C66.0705 191.17 91.0017 189.904 108.062 183.692C125.725 177.266 135.045 168.04 142.29 150.389C151.409 128.174 150.912 99.6904 125.93 91.6429C115.423 88.254 104.723 86.5065 94.2249 82.5889C84.6622 79.0248 74.8545 72.1766 64.4411 71.6149C50.8011 70.8777 40.9122 79.0146 34.2574 90.0177Z" fill="#121519" fill-opacity="0.07"></path>
+        <path d="M147.005 75.6331C152.135 70.7783 156.106 64.2374 159.153 57.9073C166.014 43.6372 174.127 22.1368 160.207 9.68505C152.924 3.17188 139.243 3.86644 130.324 5.29774C118.428 7.20428 107.295 8.85077 96.5031 14.783C85.8056 20.6599 79.0155 33.6997 77.0014 45.6686C75.4978 54.5776 79.63 63.6672 84.7391 70.7453C91.8208 80.5571 103.503 84.2003 114.817 84.3975C121.101 84.5081 127.716 84.0527 133.89 82.8121C138.932 81.7962 143.273 79.1597 147.005 75.6331Z" fill="#121519" fill-opacity="0.07"></path>
+      </svg>
+      <div class="card-body position-relative zindex-2 py-5">
+        <form action="https://formspree.io/f/moqbbbdw"
+        method="post" class="mx-auto" style="max-width: 800px;" id="fs-frm" name="Contactformulier" accept-charset="utf-8 data-np-autofill-type="identity" data-np-checked="1" data-np-watching="1"">
+        <fieldset id="fs-frm-inputs">
+          <h2 class="h1 card-title text-center pb-4">Kom vandaag nog in contact met jouw persoonlijke computerheld!</h2>
+          <div class="row g-4">
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="full-name">Naam</label>
+              <input class="form-control form-control-lg" type="text" placeholder="Naam" required="" id="full-name" data-np-autofill-type="name_full" data-np-uid="1f5eb57e-c650-4d87-a9f8-4c64236a748b" autocomplete="off" data-np-checked="1">
+            </div>
+            <!--
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="company">Bedrijf</label>
+              <input class="form-control form-control-lg" type="text" placeholder="Bedrijfsnaam" id="company">
+            </div>
+            -->
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="mail">Email</label>
+              <input class="form-control form-control-lg" name="_replyto" type="email" placeholder="Email adres" required="" id="mail" ata-np-autofill-type="identity_email" data-np-uid="082357f8-641c-4488-b2c5-e94907dc944a" autocomplete="off" data-np-checked="1">
+            </div>
+            <!--
+            <div class="col-sm-6">
+              <label class="form-label fs-base" for="phone">Telefoon</label>
+              <input class="form-control form-control-lg" type="phone number" placeholder="Telefoonnummer" id="phone">
+            </div>
+            -->
+            <div class="col-sm-12">
+              <label class="form-label fs-base" for="msg">Hoe kan ik je helpen?</label>
+              <textarea class="form-control form-control-lg" name="bericht" type="text" rows="6" placeholder="Bericht..." required="" id="message"></textarea>
+              <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission" data-np-invisible="1" data-np-checked="1">
+            </div>
+            <div class="col-sm-12 text-center pt-4">
+              <button class="btn btn-lg btn-light" type="submit">Verzend bericht</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+   <!-- Footer-->
+   <footer class="footer py-5">
+    <div class="container pt-md-2 pt-lg-3 pt-xl-3">
+      <div class="row pb-5 pt-sm-2 mb-lg-2">
+        <div class="col-md-12 col-lg-3 pb-2 pb-lg-0 mb-4 mb-lg-0"><a class="navbar-brand py-0 mb-3 mb-lg-4" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+              <svg version="1.1
+              " width="35" height="32" viewBox="0 0 36 33" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"></path>
+              </svg></span><span class="text-nav">Computer Hero</span></a>
+          <p class="fs-sm pb-2 pb-lg-3 mb-3">Bij Computer Hero ben je op de juiste plek voor al jouw ICT-hulp.</p>
+          <div class="d-flex"><a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-3" href="#"><i class="ai-facebook"></i></a><a class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle me-3" href="#"><i class="ai-instagram"></i></a><a class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle me-3" href="#"><i class="ai-linkedin"></i></a><a class="btn btn-icon btn-sm btn-secondary btn-whatsapp rounded-circle" href="#"><i class="ai-whatsapp"></i></a></div>
+        </div>
+        <div class="col-sm-3 col-lg-2 offset-xl-1 mb-4 mb-sm-0">
+          <ul class="nav flex-column">
+            <li><h4>Servicegebieden<h4></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Amersfoort.html">Computerhulp Amersfoort</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Bilthoven.html">Computerhulp Bilthoven</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Hilversum.html">Computerhulp Hilversum</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Maarssen.html">Computerhulp Maarssen</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Nieuwegein.html">Computerhulp Nieuwegein</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Soest.html">Computerhulp Soest</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Utrecht.html">Computerhulp Utrecht</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Vianen.html">Computerhulp Vianen</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_Zeist.html">Computerhulp Zeist</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-lg-2 offset-xl-1 mb-4 mb-sm-0">
+          <ul class="nav flex-column">
+            <li><h4>Computerhulp<h4></li>
+            <li><a class="nav-link py-1 px-0" href="/computer_helpdesk.html">Computer helpdesk</a></li>
+            <li><a class="nav-link py-1 px-0" href="/computer_ondersteuning.html">Computer ondersteuning</a></li>
+            <li><a class="nav-link py-1 px-0" href="/computer_hulp_voor_ouderen.html">Computer hulp voor ouderen</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Computerhulp_student.html">Computerhulp student</a></li>
+            <li><a class="nav-link py-1 px-0" href="/computerhulp_aan_huis.html">Computerhulp aan huis</a></li>
+            <li><a class="nav-link py-1 px-0" href="/wifi_problemen.html">Wifi problemen</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Internet_problemen.html">Internet probleem</a></li>
+            <li><a class="nav-link py-1 px-0" href="/Hulp_bij_computerproblemen.html">Hulp bij computerproblemen</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-lg-2 offset-xl-1 mb-4 mb-sm-0">
+          <ul class="nav flex-column">
+            <li><h4>Contact<h4></li>
+            <li><a class="nav-link py-1 px-0" href="mailto:timothy.chero@gmail.com">timothy.chero@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="fs-sm mb-0"><span class="opacity-70">&copy;Chero 2020-2023</p>
+    </div>
+  </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="assets/vendor/aos/dist/aos.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <!-- Main theme script-->
+    <script src="assets/js/theme.min.js"></script>
+    <!-- WhatsApp -->
+    <script>(function (w,d,s,o,f,js,fjs) {w['JS-Widget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);}(window, document, 'script', 'mw', 'https://app.wappy.chat/js/whatsapp.js?v='+ +new Date()));mw('init');mw('whatsapp', {hash: 'e71424b212879d5e3d71feab6c909887', placeholderText: 'Typ een bericht'});</script>
+  </body>
+</html>

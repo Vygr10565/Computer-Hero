@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Chero | Diensten</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
+    <meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Timothy Jansen">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" color="#6366f1" href="assets/favicon/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="white">
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+      
+      
+    </script>
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+      
+    </script>
+    <!-- Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- Vendor styles-->
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Laden...</span>
+      </div>
+    </div>
+    <!-- Page wrapper-->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+      <header class="navbar navbar-expand-lg fixed-top bg-light">
+        <div class="container"><a class="navbar-brand pe-sm-3" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+              <svg version="1.1" width="35" height="32" viewBox="0 0 36 33" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"></path>
+              </svg></span>Around</a>
+          <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+            <input class="form-check-input" type="checkbox" id="theme-mode">
+            <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+            <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+          </div><a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-cart fs-xl me-2 ms-n1"></i>Buy now</a>
+          <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+          <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Landings</a>
+                <div class="dropdown-menu overflow-hidden p-0">
+                  <div class="d-lg-flex">
+                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li><a class="dropdown-item" href="index.html">Template Intro Page</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/landings.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-mobile-app-showcase.html">Mobile App Showcase</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/mobile-app.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-product.html">Product Landing</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/product-landing.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-saas-v1.html">SaaS v.1</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/saas-1.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-saas-v2.html">SaaS v.2</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/saas-2.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-marketing-agency.html">Marketing Agency</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/marketing-agency.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-shop.html">Shop Homepage</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/shop-homepage.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-creative-agency.html">Creative Agency</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/creative-agency.jpg);"></span></li>
+                      </ul>
+                    </div>
+                    <div class="mega-dropdown-column pb-2 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li><a class="dropdown-item" href="landing-web-studio.html">Web Studio</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/web-studio.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-corporate.html">Corporate</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/corporate.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-business-consulting.html">Business Consulting</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/business-consulting.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-coworking-space.html">Coworking Space</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/coworking.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-yoga-studio.html">Yoga Studio</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/yoga-studio.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-blog.html">Blog Homepage</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/blog-homepage.jpg);"></span></li>
+                      </ul>
+                    </div>
+                    <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="portfolio-list-v1.html">List View v.1</a></li>
+                      <li><a class="dropdown-item" href="portfolio-list-v2.html">List View v.2</a></li>
+                      <li><a class="dropdown-item" href="portfolio-grid-v1.html">Grid View v.1</a></li>
+                      <li><a class="dropdown-item" href="portfolio-grid-v2.html">Grid View v.2</a></li>
+                      <li><a class="dropdown-item" href="portfolio-slider.html">Slider View</a></li>
+                      <li><a class="dropdown-item" href="portfolio-single-v1.html">Single Project v.1</a></li>
+                      <li><a class="dropdown-item" href="portfolio-single-v2.html">Single Project v.2</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="shop-catalog.html">Catalog (Listing)</a></li>
+                      <li><a class="dropdown-item" href="shop-single.html">Product Page</a></li>
+                      <li><a class="dropdown-item" href="shop-checkout.html">Checkout</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="blog-grid-sidebar.html">Grid View with Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-grid.html">Grid View no Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-list-sidebar.html">List View with Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-list.html">List View no Sidebar</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v1.html">Single post v.1</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v2.html">Single post v.2</a></li>
+                      <li><a class="dropdown-item" href="blog-single-v3.html">Single post v.3</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="over_mij.html">About - Agency</a></li>
+                      <li><a class="dropdown-item" href="computerhulp_aan_huis.html">About - Product</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="diensten.html">Services v.1</a></li>
+                      <li><a class="dropdown-item" href="services-v2.html">Services v.2</a></li>
+                      <li><a class="dropdown-item" href="services-v3.html">Services v.3</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contacts</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="contactpagina.html">Contacts v.1</a></li>
+                      <li><a class="dropdown-item" href="contacts-v2.html">Contacts v.2</a></li>
+                      <li><a class="dropdown-item" href="contacts-v3.html">Contacts v.3</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Specialty Pages</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="404.html">404 Error v.1</a></li>
+                      <li><a class="dropdown-item" href="404-v2.html">404 Error v.2</a></li>
+                      <li><a class="dropdown-item" href="404-v3.html">404 Error v.3</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Account</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Auth pages</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="account-signin.html">Sign In</a></li>
+                      <li><a class="dropdown-item" href="account-signup.html">Sign Up</a></li>
+                      <li><a class="dropdown-item" href="account-signinup.html">Sign In / Up</a></li>
+                      <li><a class="dropdown-item" href="account-password-recovery.html">Password Recovery</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="account-overview.html">Overview</a></li>
+                  <li><a class="dropdown-item" href="account-settings.html">Settings</a></li>
+                  <li><a class="dropdown-item" href="account-billing.html">Billing</a></li>
+                  <li><a class="dropdown-item" href="account-orders.html">Orders</a></li>
+                  <li><a class="dropdown-item" href="account-earnings.html">Earnings</a></li>
+                  <li><a class="dropdown-item" href="account-chat.html">Chat (Messages)</a></li>
+                  <li><a class="dropdown-item" href="account-favorites.html">Favorites (Wishlist)</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="components/typography.html">UI Kit</a></li>
+              <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">Docs</a></li>
+            </ul>
+            <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-cart fs-xl me-2 ms-n1"></i>Buy now</a></div>
+          </nav>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Breadcrumb + Services grid-->
+      <section class="container py-5 mt-5 mb-md-3 mb-lg-4 mb-xxl-5">
+        <!-- Breadcrumb-->
+        <nav aria-label="breadcrumb">
+          <ol class="pt-lg-3 pb-lg-4 pb-2 breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Thuis</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Diensten</li>
+          </ol>
+        </nav>
+        <!-- Page title-->
+        <h1 class="text-center">Diensten</h1>
+        <p class="text-center pb-4 mb-2 mb-lg-3">Waar ik je graag mee help</p>
+        <!-- Services grid-->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 pb-sm-3 pb-md-4 pb-xl-5">
+          <!-- Item-->
+          <div class="col"><a class="card card-hover-primary bg-secondary border-0 h-100 text-decoration-none" href="#">
+              <div class="card-body pb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f44560" class="bi-pc-display mb-4 text-warning d-block" viewBox="0 0 20 20">
+                  <path d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V1Zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0ZM9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5ZM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5ZM1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2H1.5Z"/>                </svg>
+                <h3 class="h4 card-title mt-0">Computerhulp aan huis</h3>
+                <p class="card-text">Ik help je graag uit de brand met jouw computer, telefoon, of welk mobiel apparaat dan ook.</p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+              </div></a></div>
+          <!-- Item-->
+          <div class="col"><a class="card card-hover-primary bg-secondary border-0 h-100 text-decoration-none" href="#">
+              <div class="card-body pb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f44560" class="bi bi-tools mb-4 text-warning d-block" viewBox="0 0 20 20">
+                  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>                </svg>
+
+                <h3 class="h4 card-title mt-0">Assemblage</h3>
+                <p class="card-text">Ik geef je aankooptips voor jouw nieuwe computer of welk ander digitaal apparaat dan ook.</p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+              </div></a></div>
+          <!-- Item-->
+          <div class="col"><a class="card card-hover-primary bg-secondary border-0 h-100 text-decoration-none" href="#">
+              <div class="card-body pb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f44560" class="bi bi-house-add-fill mb-4 text-warning d-block" viewBox="0 0 20 20">
+                  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0Z"/>
+                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                  <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                </svg>
+                <h3 class="h4 card-title mt-0">Smart home</h3>
+                <p class="card-text">Interesse om jouw huis smart te maken? Geen probleem, daar kan ik je ook mee helpen.</p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+              </div></a></div>
+          <!-- Item-->
+          <div class="col"><a class="card card-hover-primary bg-secondary border-0 h-100 text-decoration-none" href="#">
+              <div class="card-body pb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f44560" class="bi bi-browser-chrome mb-4 text-warning d-block" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16 8a8.001 8.001 0 0 1-7.022 7.94l1.902-7.098a2.995 2.995 0 0 0 .05-1.492A2.977 2.977 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8ZM0 8a8 8 0 0 0 7.927 8l1.426-5.321a2.978 2.978 0 0 1-.723.255 2.979 2.979 0 0 1-1.743-.147 2.986 2.986 0 0 1-1.043-.7L.633 4.876A7.975 7.975 0 0 0 0 8Zm5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a2.979 2.979 0 0 0-1.252.243 2.987 2.987 0 0 0-1.81 2.59ZM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>                </svg>
+                <h3 class="h4 card-title mt-0">Website bouwen</h3>
+                <p class="card-text">Wordpress, Ghost, Joomla of zelfs HTML, CSS & Javascript. Geen probleem ik help je jouw droomsite werkelijkheid te maken.</p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+              </div></a></div>
+          <!-- Item-->
+          <div class="col"><a class="card card-hover-primary bg-secondary border-0 h-100 text-decoration-none" href="#">
+              <div class="card-body pb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f44560" class="bi bi-network-fill mb-4 text-warning d-block" viewBox="0 0 20 20">
+                  <path d="M2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h5.5v3A1.5 1.5 0 0 0 6 11.5H.5a.5.5 0 0 0 0 1H6A1.5 1.5 0 0 0 7.5 14h1a1.5 1.5 0 0 0 1.5-1.5h5.5a.5.5 0 0 0 0-1H10A1.5 1.5 0 0 0 8.5 10V7H14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z"/>
+                </svg>
+                <h3 class="h4 card-title mt-0">Netwerk</h3>
+                <p class="card-text">Netwerken kunnen lastig zijn. Echter, met mijn hulp loopt alles snel weer op rolletjes en kan je weer aan de slag.</p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+              </div></a></div>
+          <!-- Item-->
+          <div class="col"><a class="card card-hover-primary bg-secondary border-0 h-100 text-decoration-none" href="#">
+              <div class="card-body pb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#f44560" class="bi bi-heart-fill mb-4 text-warning d-block" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                  <h3 class="h4 card-title mt-0">Nog veel meer...</h3>
+                <p class="card-text">Heb je nog vragen, of staat je dienst er niet tussen? Aarzel niet, en neem contact op onderaan de website.</p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+              </div></a></div>
+        </div>
+      </section>
+      <!-- Benefits-->
+      <section class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5">
+        <div class="row pb-md-4 pb-xl-5">
+          <div class="col-md-6 mb-2 mb-md-0">
+            <div class="card border-0 h-100 bg-size-cover bg-position-center" style="background-image: url(assets/img/landing/marketing-agency/about/Tim-brug.png);">
+              <div class="d-none d-sm-block d-md-none" style="height: 450px;"></div>
+              <div class="d-sm-none" style="height: 350px;"></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-5 offset-xl-1">
+            <div class="pt-4 pb-sm-4 ps-md-4 ps-xl-0">
+              <h2 class="h1 pb-2 pb-sm-3 pb-xl-4"><span style="background: linear-gradient(90.72deg, #94c779 3.49%, #acbff1 50.67%, #efa7ec 100.79%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Persoonlijk </span> <br>en vertrouwd</h2>
+              <div class="d-flex pb-3 mb-2 mb-xl-3">
+                <div class="text-muted pt-1">01</div>
+                <div class="ps-3">
+                  <h3 class="h5">Persoonlijk contact</h3>
+                  <p class="mb-0">Geen grote bedrijven met winstoogmerk, gewoon Tim. Iemand waar je op kan vertrouwen.</p>
+                </div>
+              </div>
+              <div class="d-flex pb-3 mb-2 mb-xl-3">
+                <div class="text-muted pt-1">02</div>
+                <div class="ps-3">
+                  <h3 class="h5">Jaren ervaring</h3>
+                  <p class="mb-0">Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur neque congue aliqua dolor do leo proin odio est sed sit felis facilisi integer.</p>
+                </div>
+              </div>
+              <div class="d-flex pb-3 mb-2 mb-xl-3">
+                <div class="text-muted pt-1">03</div>
+                <div class="ps-3">
+                  <h3 class="h5">Duidelijk afspraken</h3>
+                  <p class="mb-0">Gewoon duidelijke afspraken met duidelijke prijzen. Geen adertjes onder het gras.</p>
+                </div>
+              </div>
+              <div class="d-flex mb-2 mb-xl-3">
+                <div class="text-muted pt-1">04</div>
+                <div class="ps-3">
+                  <h3 class="h5">Nog niet om?</h3>
+                  <p class="mb-0">Je kan altijd mailen, of even rondkijken en mij beter leren kennen. Klik daarvoor op de button hieronder.</p><br>
+                  <a class="btn btn-primary" href="#"><i class="ai-user fs-xl me-2 ms-n1"></i>Over mij</a></button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials-->
+      <section class="bg-secondary py-sm-2 py-lg-3 py-xl-4 py-xxl-5">
+        <div class="container py-5">
+          <h2 class="h1 text-center pt-1 pt-sm-2 pt-lg-3 pb-3 pb-lg-4">Testimonials</h2>
+          <!-- Swiper slider-->
+          <div class="swiper pb-2 pb-sm-3 pb-lg-4" data-swiper-options="{
+        &quot;spaceBetween&quot;: 24,
+        &quot;loop&quot;: true,
+        &quot;autoHeight&quot;: true,
+        &quot;pagination&quot;: {
+          &quot;el&quot;: &quot;.swiper-pagination&quot;,
+          &quot;clickable&quot;: true
+        },
+        &quot;breakpoints&quot;: {
+          &quot;576&quot;: { &quot;slidesPerView&quot;: 2 },
+          &quot;992&quot;: { &quot;slidesPerView&quot;: 3 }
+        }
+      }">
+            <div class="swiper-wrapper">
+              <!-- Item-->
+              <div class="swiper-slide">
+                <div class="card border-0 mb-4">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3"><img class="rounded-circle" src="assets/img/avatar/22.jpg" width="60" alt="Jane Cooper">
+                      <div class="ps-3">
+                        <div class="h6 mb-1">Jane Cooper</div>
+                        <div class="fs-sm text-muted">Medical Assistant</div>
+                      </div>
+                    </div>
+                    <p class="card-text">Sit risus metus, vel neque eu lectus duis. Vulputate facilisi at feugiat mi aenean nunc enim faucibus arcu. Diam id accumsan sit.</p>
+                  </div>
+                </div>
+                <div class="card border-0">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3"><img class="rounded-circle" src="assets/img/avatar/25.jpg" width="60" alt="Cameron Williamson">
+                      <div class="ps-3">
+                        <div class="h6 mb-1">Cameron Williamson</div>
+                        <div class="fs-sm text-muted">Marketing Coordinator</div>
+                      </div>
+                    </div>
+                    <p class="card-text">Nam convallis maecenas leo sapien interdum id. Facilisi dictum lacinia in phasellus. Nullam id sed tempor, volutpat blandit urna sagittis, commodo vestibulum. Adipiscing dictumst nunc enim massa lacus lobortis.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="swiper-slide">
+                <div class="card border-0 mb-4">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3"><img class="rounded-circle" src="assets/img/avatar/23.jpg" width="60" alt="Wade Warren">
+                      <div class="ps-3">
+                        <div class="h6 mb-1">Wade Warren</div>
+                        <div class="fs-sm text-muted">President of Sales</div>
+                      </div>
+                    </div>
+                    <p class="card-text">Vitae tempor morbi tellus pulvinar. Ut iaculis sit tristique in turpis volutpat quam nec. Pretium eu nulla egestas ultrices. Donec in pulvinar ut fermentum a, nunc, aliquam. Integer dui dui ornare sed lacinia.</p>
+                  </div>
+                </div>
+                <div class="card border-0">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3"><img class="rounded-circle" src="assets/img/avatar/26.jpg" width="60" alt="Leslie Alexander">
+                      <div class="ps-3">
+                        <div class="h6 mb-1">Leslie Alexander</div>
+                        <div class="fs-sm text-muted">CEO, Divi</div>
+                      </div>
+                    </div>
+                    <p class="card-text">Malesuada at ullamcorper adipiscing lobortis vestibulum. Aliquet lobortis justo arcu ut auctor porttitor amet, tortor. Justo.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="swiper-slide">
+                <div class="card border-0 mb-4">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3"><img class="rounded-circle" src="assets/img/avatar/24.jpg" width="60" alt="Esther Howard">
+                      <div class="ps-3">
+                        <div class="h6 mb-1">Esther Howard</div>
+                        <div class="fs-sm text-muted">CEO, Slack</div>
+                      </div>
+                    </div>
+                    <p class="card-text">Ante turpis leo dictum adipiscing nisl magnis elementum eu. Integer consequat sed ipsum massa egestas integer proin id.</p>
+                  </div>
+                </div>
+                <div class="card border-0">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3"><img class="rounded-circle" src="assets/img/avatar/27.jpg" width="60" alt="Brooklyn Simmons">
+                      <div class="ps-3">
+                        <div class="h6 mb-1">Brooklyn Simmons</div>
+                        <div class="fs-sm text-muted">Marketing Coordinator</div>
+                      </div>
+                    </div>
+                    <p class="card-text">In quisque dolor, aliquam faucibus. Gravida diam ornare egestas proin quis odio suspendisse pellentesque. Condimentum risus, rutrum curabitur faucibus mi a turpis morbi. Nulla euismod dolor quis amet sed.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Item-->
+              <div class="swiper-slide">
+                <div class="card border-0 mb-4">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3"><img class="rounded-circle" src="assets/img/avatar/28.jpg" width="60" alt="Fannie Summers">
+                      <div class="ps-3">
+                        <div class="h6 mb-1">Fannie Summers </div>
+                        <div class="fs-sm text-muted">VP of Sales</div>
+                      </div>
+                    </div>
+                    <p class="card-text">In et dui amet amet elementum urna, dictum. Eget leo ornare bibendum a fermentum. Rutrum pellentesque ipsum cras purus ac a ullamcorper. Elit ac amet quam tellus euismod ac aliquam pharetra lectus.</p>
+                  </div>
+                </div>
+                <div class="card border-0">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3"><img class="rounded-circle" src="assets/img/avatar/29.jpg" width="60" alt="Robert Fox">
+                      <div class="ps-3">
+                        <div class="h6 mb-1">Robert Fox</div>
+                        <div class="fs-sm text-muted">Marketing Coordinator</div>
+                      </div>
+                    </div>
+                    <p class="card-text">At felis non consequat neque in ultrices tortor purus dui. At sed fermentum, egestas amet et donec euismod risus. Nulla mauris.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Pagination (bullets)-->
+            <div class="swiper-pagination position-relative bottom-0 mt-2 mt-md-3 mt-lg-4 pt-4"></div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA-->
+      <section class="bg-primary dark-mode py-5">
+        <div class="container pt-lg-2 pt-xl-4 pt-xxl-5 pb-1 pb-sm-3">
+          <div class="row pt-sm-3 pt-md-4">
+            <div class="col-md-6 col-xl-5 offset-xl-1">
+              <h2 class="display-3">Klaar om geholpen te worden? Laat je mail achter.</h2>
+            </div>
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+              <p class="fs-xl pb-4 mb-2 mb-lg-3">Ik probeer altijd zo snel mogelijk op je mail te reageren. Vaak dezelfde dag nog!</p>
+              <form class="subscription-form validate" action="https://gmail.us21.list-manage.com/subscribe/post?u=86ed2fa624f180e2a68ae819e&amp;id=6235475b5b&amp;f_id=0067cbe1f0" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                <label for="subscr-email" class="form-label fs-base mb-2"></label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="ai-mail"></i>
+                  </span>
+                  <input type="email" class="form-control" id="subscr-email" name="EMAIL" placeholder="Vul hier je mail in" required>
+                  <button type="submit" class="btn btn-warning name="subscribe">Verstuur</button>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" class="subscription-form-antispam" name="mailchimp-embedded-form-antispam-name-attribute" tabindex="-1">
+                </div>
+                <div class="subscription-status"></div>
+                <div class="form-text pt-1">*Door mij te mailen ga je akkoord met de algemene voorwaarden.</div>
+              </form>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-md-block text-center mt-n5">
+            <svg class="text-warning ms-lg-5" width="171" height="97" viewBox="0 0 171 97" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M169.319 54.333C162.404 55.9509 155.712 58.0764 149.09 60.6764L149.07 60.6761C148.967 60.7158 148.863 60.7554 148.76 60.7951C147.3 61.3811 148.325 63.4238 149.672 63.2067C154.548 62.4134 159.994 59.8725 164.87 59.0792C148.278 73.1339 129.684 89.2549 107.779 92.6402C85.6981 96.0539 65.5665 86.7839 56.8768 66.9865C70.9662 55.0671 79.2106 35.6614 79.0299 17.6457C78.9484 10.3157 76.1485 -3.36373 65.7068 1.21851C55.8557 5.53146 52.0466 22.5213 50.5736 31.7739C48.7364 43.2858 49.7593 55.5291 53.8643 66.2014C52.787 67.0812 51.6907 67.8989 50.5755 68.6546C40.6328 75.3851 27.1039 78.8929 16.4487 72.0362C2.91045 63.3259 1.93984 44.9485 1.56902 30.4091C1.54778 29.6265 0.359869 29.6092 0.360624 30.3915C0.322634 44.0809 0.835929 59.065 10.5664 69.6857C18.5722 78.4182 30.4315 79.7753 41.3346 75.9924C46.2437 74.2834 50.7739 71.7557 54.8581 68.6348C59.9738 80.2586 68.9965 89.6956 82.2735 93.7393C113.474 103.223 141.744 83.0494 164.903 63.697L161.901 71.0334C161.267 72.5887 163.76 73.2736 164.393 71.7389C165.986 67.8713 167.569 63.9933 169.152 60.1359C169.288 60.0247 169.695 58.6127 169.821 58.491C170.122 57.1161 169.152 60.1359 169.851 58.4169C170.189 57.6087 170.517 56.79 170.855 55.9818C171.248 54.9994 170.185 54.1192 169.319 54.333ZM54.3624 59.8578C51.4872 49.1623 51.6051 37.5841 54.2025 26.8039C55.5185 21.3369 57.4405 15.8066 60.1572 10.8541C61.2311 8.89354 62.5139 6.77134 64.2307 5.31421C69.4231 0.902277 74.3649 4.80357 75.8002 10.4446C80.5272 28.9489 70.1806 51.6898 55.8431 64.5114C55.2971 63.0109 54.793 61.4698 54.3624 59.8578Z"></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="footer pt-lg-5 pt-4 pb-5">
+      <div class="container pt-3 mt-md-2 mt-lg-3">
+        <div class="row gy-md-5 gy-4 mb-md-5 mb-4 pb-lg-2">
+          <div class="col-lg-3"><a class="navbar-brand d-inline-flex align-items-center mb-lg-4 mb-3" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+                <svg version="1.1" width="35" height="32" viewBox="0 0 36 33" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"></path>
+                </svg></span><span class="text-nav">Around</span></a>
+            <p class="mb-4 pb-lg-1 fs-xs text-muted" style="max-width: 306px;">The agency with extensive experience that creates marketing strategies for B2B and B2C companies.</p>
+            <div class="mt-n3 ms-n3"><a class="btn btn-secondary btn-icon btn-sm btn-instagram rounded-circle mt-3 ms-3" href="#"><i class="ai-instagram"></i></a><a class="btn btn-secondary btn-icon btn-sm btn-facebook rounded-circle mt-3 ms-3" href="#"><i class="ai-facebook"></i></a><a class="btn btn-secondary btn-icon btn-sm btn-linkedin rounded-circle mt-3 ms-3" href="#"><i class="ai-linkedin"></i></a></div>
+          </div>
+          <div class="col-xl-8 offset-xl-1 col-lg-9">
+            <div class="row row-cols-sm-4 row-cols-1">
+              <div class="col">
+                <ul class="nav flex-column mb-0">
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Services</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Industries</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Clients</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Reviews</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Case studies</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="nav flex-column mb-0">
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Contacts</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Help center</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Privacy policy</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="nav flex-column mb-0">
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">About</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Careers</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">News &amp; insights</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="#">Industry forecasts</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="nav flex-column mb-0">
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="mailto:+15262200444">+ 1 526 220 0444</a></li>
+                  <li class="nav-item mb-2"><a class="nav-link p-0" href="mailto:+15262200444">+ 1 526 220 0000</a></li>
+                  <li class="nav-item mb-2"><a class="text-primary fw-semibold p-0" href="#">example@gmail.com</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fs-sm text-muted">&copy; All rights reserved. Made by <a href='https://createx.studio/' target='_blank' rel='noopener' class='text-dark text-decoration-none opacity-90'>Timothy Jansen</a></div>
+      </div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Main theme script-->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>
