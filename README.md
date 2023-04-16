@@ -13,3 +13,5 @@ https://nodejs.org/en/
 3. After the installation is completed run `gulp` or `npm run build` to launch the project. It should automatically opens Around homepage in your browser (http://localhost:3000/)
 
 **For more details see the documentation that comes with the theme.**
+
+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
